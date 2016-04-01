@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://npmcdn.com/react-towel/umd/react-towel.js" charset="utf-8"></script>
+    <style>
+    .ctm-modal {
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: -webkit-flex;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        justify-content: center;
+    }
+    .ctm-modal .ctm-modal-overlay {
+        background-color: rgba(0,0,0,.4);
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+    }
+    .modal-overlay{
+        background: rgba(0,0,0,.5);
+        bottom: 0;
+        display: block;
+        left: 0;
+        overflow-y: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1000;
+    }
+    .ctm-modal .ctm-modal-body {
+        align-self: center;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #fff;
+        max-width: 480px;
+        position: relative;
+        z-index: 2000;
+    }
+    .ctm-modal .close-btn {
+        background: #000;
+        color: #fff;
+        position: absolute;
+        line-height: 20px;
+        top: -10px;
+        right: -10px;
+        text-align: center;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        transition: all .15s;
+    }
+    </style>
+    <script type="text/babel">
+    'use strict'
+
+    class Modal extends React.Component {
+
+        constructor(props) {
+            super(props);
+            this.state = { visible: this.props.visible };
+        }
+
+        componentWillReceiveProps(newProps) {
+            newProps.visible ? this.setState({visible: true}) : this.setState({visible: false});
+        }
+
+        closeModal() {
+            this.setState({
+                visible: false
+            });
+        }
+
+        render() {
+            if (this.state.visible) {
+                return (
+                    <div className='ctm-modal'>
+                        <div className='ctm-modal-overlay' ></div>
+                        <div className='ctm-modal-body'>
+                            <span className='close-btn' onClick={this.closeModal.bind(this)}>x</span>
+                            {this.props.children}
+                        </div>
+                    </div>
+                    );
+            }
+            return null;
+        }
+    }
+
+    Modal.propTypes = {
+        children: React.PropTypes.node.isRequired,
+        visible: React.PropTypes.bool
+    }
+
+
+    class App extends React.Component {
+
+        constructor() {
+            super();
+
+            this.state = {
+                visible: false
+            };
+        }
+
+        openModal() {
+            this.setState({
+                visible: true
+            });
+        }
+
+        render() {
+            return (
+                <div>
+                    <button onClick={this.openModal.bind(this)}>open</button>
+                    <Modal visible={this.state.visible}>
+                        <h1>New Modal windows</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ea deserunt, inventore omnis quasi repellat eaque atque necessitatibus modi facilis esse doloribus! Dolor cumque rerum nesciunt voluptatem ipsum minus! Mollitia?</p>
+                    </Modal>
+                </div>
+                );
+        }
+    }
+
+    ReactDOM.render(
+        <App />, document.getElementById('root')
+        )
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

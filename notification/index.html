@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://npmcdn.com/react-towel/umd/react-towel.js" charset="utf-8"></script>
+    <style>
+        .notification-item {
+            width: 200px;
+            border-radius: 5px;
+            color: #fff;
+            background: #ccc;
+            opacity: 0.8;
+            padding: 5px;
+            margin: 0 0 10px;
+            position: relative;
+        }
+        .notification-item.error{background: #D32F2F;}
+        .notification-item.success{background: #4CAF50;}
+        .notification-body{
+            margin: 10px;
+            opacity: 0.8;
+        }
+        .notification-container{
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .close-btn{
+            position: absolute;
+            top:0;
+            right: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/babel">
+        'use strict'
+
+        class NotificationItem extends React.Component {
+          hideNotification() {
+            this.props.hideNotification(this.props.id);
+          }
+
+          render() {
+            return (
+              <div className={'notification-item ' + this.props.type}>
+                <span className='close-btn' onClick={this.hideNotification.bind(this)}>x</span>
+                <p className='notification-body'>
+                  {this.props.msg}
+                </p>
+              </div>
+            );
+          }
+        }
+
+        class Notifications extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              notifications: []
+            };
+
+            this.success = this.success.bind(this);
+            this.error = this.error.bind(this);
+            this.addNotification = this.addNotification.bind(this);
+            this.timerToHide = this.timerToHide.bind(this);
+          }
+
+          success(msg, duration) {
+            this.addNotification(msg, duration, 'success');
+          }
+
+          error(msg, duration) {
+            this.addNotification(msg, duration, 'error');
+          }
+
+          addNotification(msg, duration, type) {
+            const notifications = this.state.notifications;
+            const newKey = notifications.length;
+
+            duration = duration ? duration: 5000;
+
+            notifications.push({
+              msg: msg,
+              duration: duration,
+              type: type
+            });
+
+            this.setState({
+              notifications: notifications
+            });
+
+            this.timerToHide(duration, newKey);
+          }
+
+          timerToHide(duration, key) {
+            setTimeout(() => { this.hideNotification(key); }, duration);
+          }
+
+          hideNotification(key) {
+            delete this.state.notifications[key];
+            this.setState(this.state);
+          }
+
+          render() {
+            let notificationElems;
+
+            if (this.state.notifications.length) {
+              notificationElems = this.state.notifications.map((notification, index) => {
+                return (
+                  <NotificationItem id={index}
+                                    key={index}
+                                    msg={notification.msg}
+                                    type={notification.type}
+                                    hideNotification={this.hideNotification.bind(this)}
+                    />
+                );
+              });
+            }
+
+            return (
+              <div className='notification-container'>
+                {notificationElems}
+              </div>
+            );
+          }
+        }
+
+        class Demo extends React.Component {
+
+          showNotification() {
+            this.refs.notification.success('Hello World');
+            this.refs.notification.error('Hello World');
+          }
+
+          render() {
+            return (
+              <div>
+                <button onClick={this.showNotification.bind(this)}>
+                  Show Alert
+                </button>
+                <Notifications ref='notification'/>
+              </div>
+            );
+          }
+        }
+
+        ReactDOM.render(
+            <Demo />,
+            document.getElementById('root')
+            )
+        </script>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    </html>

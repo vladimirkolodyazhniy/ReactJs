@@ -14,3 +14,5 @@
  10. submitOnDebounce to allow submition by timeout in sec
 
  example link: https://vladimirkolodyazhniy.github.io/FormValidationModule/index.html
+ 
+Result data is displayed via browser console.

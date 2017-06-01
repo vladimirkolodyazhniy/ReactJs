@@ -12,3 +12,5 @@
  8. detachFromForm to remove inputs from Form
  9. preventEnterKey to prevent Enter Key submition
  10. submitOnDebounce to allow submition by timeout in sec
+
+ example link: https://vladimirkolodyazhniy.github.io/FormValidationModule/index.html

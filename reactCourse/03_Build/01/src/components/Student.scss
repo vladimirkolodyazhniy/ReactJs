@@ -1,0 +1,64 @@
+.students-list {
+    padding-bottom: 15px;
+}
+
+.student {
+    border: 1px solid #ccc;
+    border-top-width: 0;
+    padding: 20px;
+    overflow: hidden;
+    .students-list &:first-child{
+        border-top-width: 1px;
+    }
+    .avatar-holder {
+        float: left;
+        width: 130px;
+        margin: 0 20px 0 0;
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .content-holder {
+        overflow: hidden;
+    }
+    .student-name {
+        display: block;
+        font-size: 24px;
+        line-height: 1.2;
+        margin: 0 0 15px;
+    }
+    .student-location {
+        display: block;
+        margin: 0 0 15px;
+        font-size: 18px;
+        line-height: 1.2;
+        .fa {
+            font-size: 30px;
+            line-height: 1;
+            color: #70BC5C;
+            padding: 0 5px 0 0;
+        }
+    }
+    .social-networks {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: 40px;
+        line-height: 1;
+        a {
+            color: #BEBEBE;
+            transition: color .3s;
+            &:hover {
+                color: #70BC5C;
+            }
+        }
+        li {
+            float: left;
+            margin: 0 15px 0 0;
+        }
+    }
+
+}

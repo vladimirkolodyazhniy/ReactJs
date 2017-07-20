@@ -1,0 +1,47 @@
+.controls_panel {
+    background: #F5F5F5;
+    display: flex;
+    color: #424242;
+    padding: 5px 10px;
+    border-bottom: 1px solid #424242;
+}
+
+.controls_panel .btn {
+    font-size: 55px;
+    line-height: 1;
+    cursor: pointer;
+    align-self: flex-end;
+    padding: 5px;
+    transition: color .3s;
+    width: 58px;
+    height: 65px;
+}
+
+.controls_panel .btn_plus {
+    color: #64bf2f;
+}
+
+.controls_panel .btn_plus:hover {
+    color: #92d36e;
+}
+
+.controls_panel .btn_minus {
+    color: #c11b1b;
+}
+
+.controls_panel .btn_minus:hover {
+    color: #f76565;
+}
+
+.total {
+    flex: 1 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 1.2;
+    align-self: center;
+    padding: 0 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

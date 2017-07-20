@@ -1,0 +1,16 @@
+.statistic_panel {
+    background: #fff;
+    display: flex;
+    border-bottom: 1px solid #424242;
+    padding: 15px 10px;
+    align-items: center;
+}
+
+.statistic_item {
+    padding: 0 5px;
+    width: 60%;
+}
+
+.statistic_item:first-child {
+    width: 40%;
+}

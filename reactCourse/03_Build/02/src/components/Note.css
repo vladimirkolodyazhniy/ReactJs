@@ -1,0 +1,84 @@
+.note {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 10px;
+    position: relative;
+    transition: padding .2s;
+}
+
+.note:hover {
+    padding-right: 50px;
+}
+
+.note h3 {
+    margin: 0 0 2px;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+
+.note_icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    position: relative;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.note_icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.note_content {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.note_amount {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.expense .note_amount {
+    color: #c11b1b
+}
+
+.income .note_amount {
+    color: #64bf2f;
+}
+
+.note_date {
+    display: block;
+    color: #C0C0C0;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.note_delete_icon {
+    position: absolute;
+    top: 31px;
+    right: 9px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 19px;
+    transition:  all .3s;
+    display: block;
+    color: #fff;
+    background: #c11b1b;
+    border-radius: 50%;
+    width: 21px;
+    height: 21px;
+    text-align: center;
+    opacity: 0;
+}
+
+.note:hover .note_delete_icon {
+    opacity: 1;
+}

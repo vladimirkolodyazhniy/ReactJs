@@ -1,0 +1,71 @@
+.editor {
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor_fields {
+    margin-bottom: 15px;
+}
+
+.editor_input {
+    width: 100%;
+    font-size: 16px;
+    padding: 5px 10px 5px 0;
+    border: none;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    color: #999;
+    margin: 0 0 30px;
+}
+
+.editor_input:focus {
+    outline: 0;
+    border-bottom-color: #92d36e;
+}
+
+.editor_footer {
+    text-align: right;
+}
+
+.editor_button {
+    width: 100px;
+    background-color: #64bf2f;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 8px;
+    text-transform: uppercase;
+    text-decoration:none;
+    margin: 0 0 0 15px;
+    transition: background .3s;
+}
+
+.button_default {
+    background-color: #666;
+}
+
+.editor_button:hover {
+    background-color:#92d36e;
+}
+
+.button_default:hover {
+    background-color: #999;
+}
+
+.editor_button:active {
+    position: relative;
+    top: 1px;
+}
+
+.editor_button:focus {
+    outline: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

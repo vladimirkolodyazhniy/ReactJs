@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+}
+
+
+
+:global .flex-container {
+    display: flex;
+    align-items: center;
+}
+
+:global .flex-column {
+    flex: auto;
+    text-align: left;
+}
+
+:global .flex-column +.flex-column {
+    text-align: right;
+}

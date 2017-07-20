@@ -1,0 +1,45 @@
+select {
+    background: #fff;
+    padding: 5px 9px 3px 0;
+    font-size: 16px;
+    line-height: 1;
+    color: #999;
+    border: none;
+    border-bottom: 1px solid #bdbebe;
+    width: 100%;
+    outline:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-clip: padding-box;
+}
+
+select:focus {
+    border-bottom-color: #92d36e;
+}
+
+.ctm_select {
+    position: relative;
+    margin: 0 0 30px; 
+}
+
+.ctm_select:before {
+    content: '';
+    right: 0;
+    top: 1px;
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    pointer-events: none;
+}
+
+.ctm_select:after {
+    content:'';
+    border: 4px solid transparent;
+    border-top: 6px solid #b7bcc2;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    pointer-events: none;
+}

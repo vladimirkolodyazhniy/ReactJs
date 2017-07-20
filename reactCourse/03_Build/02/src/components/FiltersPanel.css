@@ -1,0 +1,22 @@
+.filters_panel {
+    background: #F5F5F5;
+    display: flex;
+    color: #424242;
+    border-bottom: 1px solid #424242;
+}
+
+.filters_button {
+    flex: 1;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all .3s;
+    border-left: 1px solid #999;
+}
+
+.filters_button:hover,
+.active {
+    background: #45a5d4;
+    color: #fff;
+}

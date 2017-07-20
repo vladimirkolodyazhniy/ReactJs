@@ -1,15 +1,25 @@
 ## Welcome_Lesson
 
 ###### Lesson 1
+Component for displaying an article without JSX
+
 example link: https://vladimirkolodyazhniy.github.io/01_Welcome_Lesson/01/index.html
 
 ###### Lesson 2
+Component for displaying an article with JSX
+
 example link: https://vladimirkolodyazhniy.github.io/01_Welcome_Lesson/02/index.html
 
 ######  Lesson 3
+Tweet with additionally options.
+isLiked and isRetweeted.
+Calculate the conditional indicator of the popularity of Twitter: popularity = likes + retweets
+
 example link: https://vladimirkolodyazhniy.github.io/01_Welcome_Lesson/03/index.html
 
 ######  Lesson 4
+Group List
+
 example link: https://vladimirkolodyazhniy.github.io/01_Welcome_Lesson/04/index.html
 
 

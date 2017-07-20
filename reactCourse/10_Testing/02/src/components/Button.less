@@ -1,0 +1,45 @@
+@import "../assets/variables.less";
+
+.btnDefault {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: bold;
+    color: @white;
+    background-color: @malachite;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 2px 15px;
+
+    &:hover {
+        background-color: @fruitSalad;
+    }
+}
+
+.disabled {
+    composes: btnDefault;
+
+    pointer-events: none;
+    background-color: @darkGray;
+}
+
+.btnSuccess {
+    composes: btnDefault;
+
+    background-color: @fruitSalad;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    width: auto;
+
+    &:hover {
+        background-color: @forestGreen;
+    }
+}
+.btnSuccessDisabled {
+    composes: btnSuccess;
+
+    background-color: @bittersweet;
+}

@@ -1,0 +1,5 @@
+[
+    {"id": 1, "title": "iPad 4 Mini", "price": 500.01, "inventory": 2, "imgSrc": "http://macbox.com.ua/files/products/2531_large.jpg"},
+    {"id": 2, "title": "H&M T-Shirt White", "price": 10.99, "inventory": 10, "imgSrc": "http://coolspotters.com/files/photos/1025465/h-and-m-divided-camoflage-dog-t-shirt-profile.jpg"},
+    {"id": 3, "title": "Charli XCX - Sucker CD", "price": 19.99, "inventory": 5, "imgSrc": "https://www.musik-sammler.de/cover/1096000/1095764_2_1426352410_300.jpg"}
+]

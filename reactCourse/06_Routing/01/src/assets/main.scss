@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #205CF0;
+    margin: 0 0 30px;
+    font-family: Galada, sans-serif;
+}
+
+.feed-holder {
+    max-width: 500px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    border: none;
+    background: #93c40d;
+    display: block;
+    max-width: 150px;
+    width: 100%;
+    padding: 5px 15px;
+    margin: 0;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background .3s;
+    &:hover {
+        background: #698c0b;
+    }
+}

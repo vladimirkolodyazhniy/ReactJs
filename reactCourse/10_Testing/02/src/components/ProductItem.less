@@ -1,0 +1,45 @@
+@import "../assets/variables.less";
+
+.root {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-bottom: 1px solid @nobel;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+    background: @white;
+    cursor: move;
+    padding-right: 130px;
+    position: relative;
+    transition: all .3s;
+}
+
+.disabled {
+    composes: root;
+
+    pointer-events: none;
+}
+
+.isDragging {
+    composes: root;
+
+    border: 2px dashed @darkGray;
+    opacity: 0.4;
+}
+
+.item {
+    display: flex;
+}
+
+.media {
+    width: 80px;
+    margin-right: 20px;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content {
+    flex: auto;
+    padding: 5px 0;
+}

@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #6e7789;
+    color: #404756;
+}
+
+h1, h2 {
+    font-weight: bold;
+    text-align: center;
+    color: #2c2d49;
+    font-family: Galada, sans-serif;
+    margin: 0 0 15px;
+}
+
+h3 {
+    margin: 0 0 10px;
+}

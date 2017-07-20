@@ -1,0 +1,52 @@
+.flip_container {
+    cursor: pointer;
+    user-select: none;
+    margin: 5px;
+    perspective: 10000px;
+}
+
+.flip_container,
+.front,
+.back{
+    width: 150px;
+    height: 150px;
+}
+
+.flipped {
+    composes: flip_container;
+
+    .flipper {
+        transform: rotateY(180deg);
+    }
+}
+
+.flipper{
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    flex: 1;
+    .front,
+    .back{
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        box-shadow: 1px 1px 4px rgba(0,0,0,.5);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .front{
+        z-index: 2;
+        transform: rotateY(0deg);
+        background: #fff;
+    }
+    .back{
+        transform: rotateY(180deg);
+        background: #222;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}

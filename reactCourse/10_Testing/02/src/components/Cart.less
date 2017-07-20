@@ -1,0 +1,74 @@
+@import "../assets/variables.less";
+
+.root {
+    background-color: @whiteLilac;
+    padding: 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+}
+
+.isDropActive {
+    composes: root;
+
+    .items {
+        border: 2px dashed @nobel;
+    }
+}
+
+.items {
+    margin-bottom: 15px;
+    padding: 0 15px;
+    border-bottom: 1px solid @nobel;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+    background: @white;
+    overflow: hidden;
+}
+
+.total {
+    margin: 0 0 15px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 28px;
+    position: relative;
+    overflow: hidden;
+    color: @limeade;
+
+    &:after{
+        content: "";
+        color: @limeade;
+        width: 100%;
+        position: absolute;
+        top: 14px;
+        left: 0;
+        height: 1px;
+        border-top: 1px dashed;
+        z-index: 0;
+    }
+}
+
+.name,
+.value {
+    position: relative;
+    z-index: 1;
+    background-color: @whiteLilac;
+}
+.name {
+    float: left;
+    padding-right: 12px;
+}
+.value {
+    float: right;
+    padding-left: 12px;
+    transition: all 1s;
+}
+
+.appear,
+.enter {
+  opacity: 0.01;
+}
+
+.appear.appearActive,
+.enter.enterActive {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
